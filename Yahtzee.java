@@ -62,10 +62,9 @@ private void selectDice() {
 		display.waitForPlayerToSelectDice();
 		for (int i=0; i < N_DICE; i++) {
 			if(display.isDieSelected(i) == true) {
-				println(dice[i]);
 				int diceRoll = rgen.nextInt(1, 6);
 				dice[i] = diceRoll;
-//				println(dice[i]);
+				println(dice[i]);
 			}
 		}
 		display.displayDice(dice);
