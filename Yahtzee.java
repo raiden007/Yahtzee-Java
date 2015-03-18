@@ -38,6 +38,7 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 				display.printMessage("Select a category.");
 				category = display.waitForPlayerToSelectCategory();
 				boolean categoryIsValid = YahtzeeMagicStub.checkCategory(dice, category);
+				println(categoryIsValid);
 				while (categoryIsValid == false) {
 					display.updateScorecard(category, i+1, 0);
 				}
@@ -70,7 +71,6 @@ private void selectDice() {
 private void rollDice() {
 		for (int i=0; i<N_DICE; i++) {
 			int diceRoll = rgen.nextInt(1, 6);
-			println(diceRoll);
 			dice[i] = diceRoll;
 		}
 		display.displayDice(dice);
