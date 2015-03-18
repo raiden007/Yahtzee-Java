@@ -64,7 +64,7 @@ private void updateScoreCard(int i) {
 			display.updateScorecard(category, i+1, 0);
 		}
 		if (categoryIsValid == true) {
-			println(category);
+			score = 0;
 			if (category == 1) {
 				for (int j=0; j < N_DICE; j++) {
 					if (dice[j] == 1) {
