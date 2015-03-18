@@ -127,9 +127,17 @@ private void updateScoreCard(int i) {
 				display.updateScorecard(category, i+1, score);
 				categoriesTotalNumber--;
 				upperScore += score;
+			} else if (category == 7) {
+				score = dice[0] + dice[1] + dice[2] + dice[3] + dice[4];
+				display.updateScorecard(category, i+1, score);
 			}
 		}
 	}
+
+private boolean checkThreeOfAKind() {
+	// TODO Auto-generated method stub
+	return false;
+}
 
 private void selectDice() {
 		display.waitForPlayerToSelectDice();
