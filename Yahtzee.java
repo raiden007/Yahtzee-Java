@@ -60,7 +60,7 @@ private void checkBonus(int i) {
 			display.updateScorecard(8, i+1, upperBonus);
 			totalScore += upperBonus;
 		}
-		display.updateScorecard(16, i+1, upperScore);
+		display.updateScorecard(16, i+1, lowerScore);
 		totalScore = upperScore + upperScore;
 		display.updateScorecard(17, i+1, totalScore);
 	}
