@@ -41,6 +41,7 @@ private void selectDice() {
 			if(display.isDieSelected(i) == true) {
 				dice[i] = diceRoll;
 			}
+		display.displayDice(dice);
 		}
 	}
 
