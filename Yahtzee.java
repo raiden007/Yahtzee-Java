@@ -41,9 +41,10 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 				display.printMessage("Wrong Category, select another.");
 				display.waitForPlayerToSelectCategory();
 			}
-//		int player = 1;
-//		int score = 0;
-//		display.updateScorecard(category, player, score);
+			if (categoryIsValid == true) {
+				score = 1;
+			}
+			display.updateScorecard(category, i, score);
 		}
 	}
 		
@@ -82,4 +83,5 @@ private void rollDice() {
 	int[] dice = new int[N_DICE];
 	private RandomGenerator rgen = new RandomGenerator();
 	int category;
+	int score;
 }
