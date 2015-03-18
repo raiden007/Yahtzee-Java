@@ -34,6 +34,7 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 			selectDice();
 			display.printMessage("Last re-roll!. Select the dice you wish to re-roll and press \"Roll Again\".");
 			selectDice();
+			display.printMessage("Select a category.");
 			category = display.waitForPlayerToSelectCategory();
 //		int player = 1;
 //		int score = 0;
