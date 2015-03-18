@@ -71,6 +71,7 @@ private void updateScoreCard(int i) {
 					if (dice[j] == 1) {
 						score = score + 1;
 						upperScore += score;
+						println("Upper score: " + upperScore);
 					}
 				}
 				display.updateScorecard(category, i+1, score);
@@ -80,6 +81,7 @@ private void updateScoreCard(int i) {
 					if (dice[j] == 2) {
 						score = score + 2;
 						upperScore += score;
+						println("Upper score: " + upperScore);
 					}
 				}
 				display.updateScorecard(category, i+1, score);
@@ -89,6 +91,7 @@ private void updateScoreCard(int i) {
 					if (dice[j] == 3) {
 						score = score + 3;
 						upperScore += score;
+						println("Upper score: " + upperScore);
 					}
 				}
 				display.updateScorecard(category, i+1, score);
@@ -98,6 +101,7 @@ private void updateScoreCard(int i) {
 					if (dice[j] == 4) {
 						score = score + 4;
 						upperScore += score;
+						println("Upper score: " + upperScore);
 					}
 				}
 				display.updateScorecard(category, i+1, score);
@@ -107,6 +111,7 @@ private void updateScoreCard(int i) {
 					if (dice[j] == 5) {
 						score = score + 5;
 						upperScore += score;
+						println("Upper score: " + upperScore);
 					}
 				}
 				display.updateScorecard(category, i+1, score);
@@ -116,6 +121,7 @@ private void updateScoreCard(int i) {
 					if (dice[j] == 6) {
 						score = score + 6;
 						upperScore += score;
+						println("Upper score: " + upperScore);
 					}
 				}
 				display.updateScorecard(category, i+1, score);
