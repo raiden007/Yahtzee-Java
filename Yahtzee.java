@@ -38,67 +38,70 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 				display.printMessage("Select a category.");
 				println(dice[4]);
 				category = display.waitForPlayerToSelectCategory();
-				boolean categoryIsValid = YahtzeeMagicStub.checkCategory(dice, category);
-				println(categoryIsValid);
-				while (categoryIsValid == false) {
-					display.updateScorecard(category, i+1, 0);
-				}
-				if (categoryIsValid == true) {
-					println(category);
-					if (category == 1) {
-						for (int j=0; j < N_DICE; j++) {
-							if (dice[j] == 1) {
-								score = score + 1;
-								println(score);
-							}
-						}
-						display.updateScorecard(category, i+1, score);
-					} else if (category == 2) {
-						for (int j=0; j < N_DICE; j++) {
-							if (dice[j] == 2) {
-								score = score + 2;
-								println(score);
-							}
-						}
-						display.updateScorecard(category, i+1, score);
-					} else if (category == 3) {
-						for (int j=0; j < N_DICE; j++) {
-							if (dice[j] == 3) {
-								score = score + 3;
-								println(score);
-							}
-						}
-						display.updateScorecard(category, i+1, score);
-					} else if (category == 4) {
-						for (int j=0; j < N_DICE; j++) {
-							if (dice[j] == 4) {
-								score = score + 4;
-								println(score);
-							}
-						}
-						display.updateScorecard(category, i+1, score);
-					} else if (category == 5) {
-						for (int j=0; j < N_DICE; j++) {
-							if (dice[j] == 5) {
-								score = score + 5;
-								println(score);
-							}
-						}
-						display.updateScorecard(category, i+1, score);
-					} else if (category == 6) {
-						for (int j=0; j < N_DICE; j++) {
-							if (dice[j] == 6) {
-								score = score + 6;
-								println(score);
-							}
-						}
-						display.updateScorecard(category, i+1, score);
-					}
-					
-				}		
+				updateScoreCard(i);		
 			}
 	}
 		
+
+private void updateScoreCard(int i) {
+		categoryIsValid = YahtzeeMagicStub.checkCategory(dice, category);
+		println(categoryIsValid);
+		while (categoryIsValid == false) {
+			display.updateScorecard(category, i+1, 0);
+		}
+		if (categoryIsValid == true) {
+			println(category);
+			if (category == 1) {
+				for (int j=0; j < N_DICE; j++) {
+					if (dice[j] == 1) {
+						score = score + 1;
+						println(score);
+					}
+				}
+				display.updateScorecard(category, i+1, score);
+			} else if (category == 2) {
+				for (int j=0; j < N_DICE; j++) {
+					if (dice[j] == 2) {
+						score = score + 2;
+						println(score);
+					}
+				}
+				display.updateScorecard(category, i+1, score);
+			} else if (category == 3) {
+				for (int j=0; j < N_DICE; j++) {
+					if (dice[j] == 3) {
+						score = score + 3;
+						println(score);
+					}
+				}
+				display.updateScorecard(category, i+1, score);
+			} else if (category == 4) {
+				for (int j=0; j < N_DICE; j++) {
+					if (dice[j] == 4) {
+						score = score + 4;
+						println(score);
+					}
+				}
+				display.updateScorecard(category, i+1, score);
+			} else if (category == 5) {
+				for (int j=0; j < N_DICE; j++) {
+					if (dice[j] == 5) {
+						score = score + 5;
+						println(score);
+					}
+				}
+				display.updateScorecard(category, i+1, score);
+			} else if (category == 6) {
+				for (int j=0; j < N_DICE; j++) {
+					if (dice[j] == 6) {
+						score = score + 6;
+						println(score);
+					}
+				}
+				display.updateScorecard(category, i+1, score);
+			}
+		}
+	}
 
 private void selectDice() {
 		display.waitForPlayerToSelectDice();
@@ -129,4 +132,5 @@ private void rollDice() {
 	int category;
 	int score;
 	int categoriesTotalNumber;
+	boolean categoryIsValid;
 }
