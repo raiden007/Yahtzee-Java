@@ -46,7 +46,7 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 					println(category);
 					if (category == 1) {
 						for (int j=0; i < N_DICE; j++) {
-							println(dice[j]);
+							println("Dice:" + dice[j]);
 							if (dice[j] == 1) {
 								score = score + 1;
 								println(score);
