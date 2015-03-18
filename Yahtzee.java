@@ -129,7 +129,7 @@ private void updateScoreCard(int i) {
 				upperScore += score;
 			} else if (category == 7) {
 				score = dice[0] + dice[1] + dice[2] + dice[3] + dice[4];
-				display.updateScorecard(category, i+1, score);
+				display.updateScorecard(7, i+1, score);
 			}
 		}
 	}
