@@ -60,8 +60,9 @@ private void checkBonus(int i) {
 			display.updateScorecard(8, i+1, upperBonus);
 			totalScore += upperBonus;
 		}
-		display.updateScorecard(16, i+1, lowerScore);
-		display.updateScorecard(17, i+1, score);
+		display.updateScorecard(16, i+1, upperScore);
+		totalScore = upperScore + upperScore;
+		display.updateScorecard(17, i+1, totalScore);
 	}
 
 private void updateScoreCard(int i) {
@@ -81,7 +82,6 @@ private void updateScoreCard(int i) {
 				display.updateScorecard(category, i+1, score);
 				categoriesTotalNumber--;
 				upperScore += score;
-				totalScore += score;
 			} else if (category == 2) {
 				for (int j=0; j < N_DICE; j++) {
 					if (dice[j] == 2) {
@@ -91,7 +91,6 @@ private void updateScoreCard(int i) {
 				display.updateScorecard(category, i+1, score);
 				categoriesTotalNumber--;
 				upperScore += score;
-				totalScore += score;
 			} else if (category == 3) {
 				for (int j=0; j < N_DICE; j++) {
 					if (dice[j] == 3) {
@@ -101,7 +100,6 @@ private void updateScoreCard(int i) {
 				display.updateScorecard(category, i+1, score);
 				categoriesTotalNumber--;
 				upperScore += score;
-				totalScore += score;
 			} else if (category == 4) {
 				for (int j=0; j < N_DICE; j++) {
 					if (dice[j] == 4) {
@@ -111,7 +109,6 @@ private void updateScoreCard(int i) {
 				display.updateScorecard(category, i+1, score);
 				categoriesTotalNumber--;
 				upperScore += score;
-				totalScore += score;
 			} else if (category == 5) {
 				for (int j=0; j < N_DICE; j++) {
 					if (dice[j] == 5) {
@@ -121,7 +118,6 @@ private void updateScoreCard(int i) {
 				display.updateScorecard(category, i+1, score);
 				categoriesTotalNumber--;
 				upperScore += score;
-				totalScore += score;
 			} else if (category == 6) {
 				for (int j=0; j < N_DICE; j++) {
 					if (dice[j] == 6) {
@@ -131,7 +127,6 @@ private void updateScoreCard(int i) {
 				display.updateScorecard(category, i+1, score);
 				categoriesTotalNumber--;
 				upperScore += score;
-				totalScore += score;
 			}
 		}
 	}
