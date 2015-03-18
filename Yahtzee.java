@@ -45,8 +45,10 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 		
 
 private void checkBonus(int i) {
-		// TODO Auto-generated method stub
 		display.updateScorecard(7, i+1, score);
+		display.updateScorecard(8, i+1, score);
+		display.updateScorecard(16, i+1, score);
+		display.updateScorecard(17, i+1, score);
 	}
 
 private void updateScoreCard(int i) {
