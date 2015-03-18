@@ -30,7 +30,10 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 		rollDice();
 		selectDice();
 		selectDice();
-
+		int category = display.waitForPlayerToSelectCategory();
+		int player = 1;
+		int score = 0;
+		display.updateScorecard(category, player, score);
 		
 	}
 		
