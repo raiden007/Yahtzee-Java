@@ -76,6 +76,7 @@ private void rollDice() {
 			dice[i] = diceRoll;
 		}
 		display.displayDice(dice);
+		println(dice);
 	}
 
 /* Private instance variables */
