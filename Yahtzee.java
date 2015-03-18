@@ -130,6 +130,18 @@ private void updateScoreCard(int i) {
 			} else if (category == 9) {
 				score = dice[0] + dice[1] + dice[2] + dice[3] + dice[4];
 				display.updateScorecard(category, i+1, score);
+				categoriesTotalNumber--;
+				lowerScore += score;
+			} else if (category == 10) {
+				score = dice[0] + dice[1] + dice[2] + dice[3] + dice[4];
+				display.updateScorecard(category, i+1, score);
+				categoriesTotalNumber--;
+				lowerScore += score;
+			} else if (category == 11) {
+				score = 25;
+				display.updateScorecard(category, i+1, score);
+				categoriesTotalNumber--;
+				lowerScore += score;
 			}
 		}
 	}
