@@ -65,7 +65,7 @@ private void checkBonus(int i) {
 
 private void updateScoreCard(int i) {
 		categoryIsValid = YahtzeeMagicStub.checkCategory(dice, category);
-		while (categoryIsValid == false) {
+		if (categoryIsValid == false) {
 			score = 0;
 			display.updateScorecard(category, i+1, score);
 			categoriesTotalNumber--;
