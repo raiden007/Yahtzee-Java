@@ -142,6 +142,26 @@ private void updateScoreCard(int i) {
 				display.updateScorecard(category, i+1, score);
 				categoriesTotalNumber--;
 				lowerScore += score;
+			} else if (category == 12) {
+				score = 30;
+				display.updateScorecard(category, i+1, score);
+				categoriesTotalNumber--;
+				lowerScore += score;
+			} else if (category == 13) {
+				score = 40;
+				display.updateScorecard(category, i+1, score);
+				categoriesTotalNumber--;
+				lowerScore += score;
+			} else if (category == 14) {
+				score = 50;
+				display.updateScorecard(category, i+1, score);
+				categoriesTotalNumber--;
+				lowerScore += score;
+			} else if (category == 15) {
+				score = dice[0] + dice[1] + dice[2] + dice[3] + dice[4];
+				display.updateScorecard(category, i+1, score);
+				categoriesTotalNumber--;
+				lowerScore += score;
 			}
 		}
 	}
