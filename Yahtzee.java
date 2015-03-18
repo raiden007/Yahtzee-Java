@@ -36,7 +36,7 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 				display.printMessage("Last chance!!!. Select the dice you wish to re-roll and press \"Roll Again\".");
 				selectDice();
 				display.printMessage("Select a category.");
-				println(dice[5]);
+				println(dice[4]);
 				category = display.waitForPlayerToSelectCategory();
 				boolean categoryIsValid = YahtzeeMagicStub.checkCategory(dice, category);
 				println(categoryIsValid);
