@@ -43,7 +43,7 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 					display.printMessage("Select a category.");
 					category = display.waitForPlayerToSelectCategory();
 					updateScoreCard(i);
-//					checkBonus(i);
+					checkBonus(i);
 				}
 			}
 		
@@ -53,14 +53,14 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 
 private void checkBonus(int i) {
 		
-		display.updateScorecard(7, i+1, upperScore);
+		display.updateScorecard(7, i, upperScore);
 		if (upperScore > 63) {
 			upperBonus = 35;
-			display.updateScorecard(8, i+1, upperBonus);
+			display.updateScorecard(8, i, upperBonus);
 		}
-		display.updateScorecard(16, i+1, lowerScore);
+		display.updateScorecard(16, i, lowerScore);
 		totalScore = upperScore + lowerScore + upperBonus;
-		display.updateScorecard(17, i+1, totalScore);
+		display.updateScorecard(17, i, totalScore);
 	}
 
 private void updateScoreCard(int i) {
