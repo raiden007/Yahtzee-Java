@@ -43,9 +43,10 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 					display.printMessage("Select a category.");
 					category = display.waitForPlayerToSelectCategory();
 					updateScoreCard(i);
-					checkBonus(i);
+//					checkBonus(i);
 				}
 			}
+		
 		display.printMessage("GAME OVER");	
 	}
 		
