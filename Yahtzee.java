@@ -27,6 +27,7 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 
 	private void playGame() {
 		score = 0;
+		upperScore = 0;
 		categoriesTotalNumber = 13 * nPlayers;
 			while (categoriesTotalNumber > 0) {
 				for (int i=0; i<nPlayers; i++) {
@@ -51,7 +52,7 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 
 private void checkBonus(int i) {
 		
-		display.updateScorecard(7, i+1, score);
+		display.updateScorecard(7, i+1, upperScore);
 		display.updateScorecard(8, i+1, score);
 		display.updateScorecard(16, i+1, score);
 		display.updateScorecard(17, i+1, score);
@@ -69,7 +70,7 @@ private void updateScoreCard(int i) {
 				for (int j=0; j < N_DICE; j++) {
 					if (dice[j] == 1) {
 						score = score + 1;
-						println(score);
+						upperScore += score;
 					}
 				}
 				display.updateScorecard(category, i+1, score);
@@ -78,7 +79,7 @@ private void updateScoreCard(int i) {
 				for (int j=0; j < N_DICE; j++) {
 					if (dice[j] == 2) {
 						score = score + 2;
-						println(score);
+						upperScore += score;
 					}
 				}
 				display.updateScorecard(category, i+1, score);
@@ -87,7 +88,7 @@ private void updateScoreCard(int i) {
 				for (int j=0; j < N_DICE; j++) {
 					if (dice[j] == 3) {
 						score = score + 3;
-						println(score);
+						upperScore += score;
 					}
 				}
 				display.updateScorecard(category, i+1, score);
@@ -96,7 +97,7 @@ private void updateScoreCard(int i) {
 				for (int j=0; j < N_DICE; j++) {
 					if (dice[j] == 4) {
 						score = score + 4;
-						println(score);
+						upperScore += score;
 					}
 				}
 				display.updateScorecard(category, i+1, score);
@@ -105,7 +106,7 @@ private void updateScoreCard(int i) {
 				for (int j=0; j < N_DICE; j++) {
 					if (dice[j] == 5) {
 						score = score + 5;
-						println(score);
+						upperScore += score;
 					}
 				}
 				display.updateScorecard(category, i+1, score);
@@ -114,7 +115,7 @@ private void updateScoreCard(int i) {
 				for (int j=0; j < N_DICE; j++) {
 					if (dice[j] == 6) {
 						score = score + 6;
-						println(score);
+						upperScore += score;
 					}
 				}
 				display.updateScorecard(category, i+1, score);
