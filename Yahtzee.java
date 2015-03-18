@@ -32,7 +32,8 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 		lowerScore = 0;
 		categoriesTotalNumber = 13 * nPlayers;
 			while (categoriesTotalNumber > 0) {
-				for (int i=0; i<nPlayers; i++) {
+				for (int i=0; i<=nPlayers; i++) {
+					score = 0;
 					display.printMessage(playerNames[i] + "'s turn! Click \"Roll Dice\" button to roll the dice.");
 					display.waitForPlayerToClickRoll(1);
 					rollDice();
@@ -67,7 +68,7 @@ private void updateScoreCard(int i) {
 		categoryIsValid = YahtzeeMagicStub.checkCategory(dice, category);
 		if (categoryIsValid == false) {
 			score = 0;
-			display.updateScorecard(category, i+1, score);
+			display.updateScorecard(category, i, score);
 			categoriesTotalNumber--;
 			println(categoriesTotalNumber);
 			lowerScore += score;
@@ -80,7 +81,7 @@ private void updateScoreCard(int i) {
 						score = score + 1;
 					}
 				}
-				display.updateScorecard(category, i+1, score);
+				display.updateScorecard(category, i, score);
 				categoriesTotalNumber--;
 				upperScore += score;
 			} else if (category == 2) {
@@ -89,7 +90,7 @@ private void updateScoreCard(int i) {
 						score = score + 2;
 					}
 				}
-				display.updateScorecard(category, i+1, score);
+				display.updateScorecard(category, i, score);
 				categoriesTotalNumber--;
 				upperScore += score;
 			} else if (category == 3) {
@@ -98,7 +99,7 @@ private void updateScoreCard(int i) {
 						score = score + 3;
 					}
 				}
-				display.updateScorecard(category, i+1, score);
+				display.updateScorecard(category, i, score);
 				categoriesTotalNumber--;
 				upperScore += score;
 			} else if (category == 4) {
@@ -107,7 +108,7 @@ private void updateScoreCard(int i) {
 						score = score + 4;
 					}
 				}
-				display.updateScorecard(category, i+1, score);
+				display.updateScorecard(category, i, score);
 				categoriesTotalNumber--;
 				upperScore += score;
 			} else if (category == 5) {
@@ -116,7 +117,7 @@ private void updateScoreCard(int i) {
 						score = score + 5;
 					}
 				}
-				display.updateScorecard(category, i+1, score);
+				display.updateScorecard(category, i, score);
 				categoriesTotalNumber--;
 				upperScore += score;
 			} else if (category == 6) {
@@ -125,42 +126,42 @@ private void updateScoreCard(int i) {
 						score = score + 6;
 					}
 				}
-				display.updateScorecard(category, i+1, score);
+				display.updateScorecard(category, i, score);
 				categoriesTotalNumber--;
 				upperScore += score;
 			} else if (category == 9) {
 				score = dice[0] + dice[1] + dice[2] + dice[3] + dice[4];
-				display.updateScorecard(category, i+1, score);
+				display.updateScorecard(category, i, score);
 				categoriesTotalNumber--;
 				lowerScore += score;
 			} else if (category == 10) {
 				score = dice[0] + dice[1] + dice[2] + dice[3] + dice[4];
-				display.updateScorecard(category, i+1, score);
+				display.updateScorecard(category, i, score);
 				categoriesTotalNumber--;
 				lowerScore += score;
 			} else if (category == 11) {
 				score = 25;
-				display.updateScorecard(category, i+1, score);
+				display.updateScorecard(category, i, score);
 				categoriesTotalNumber--;
 				lowerScore += score;
 			} else if (category == 12) {
 				score = 30;
-				display.updateScorecard(category, i+1, score);
+				display.updateScorecard(category, i, score);
 				categoriesTotalNumber--;
 				lowerScore += score;
 			} else if (category == 13) {
 				score = 40;
-				display.updateScorecard(category, i+1, score);
+				display.updateScorecard(category, i, score);
 				categoriesTotalNumber--;
 				lowerScore += score;
 			} else if (category == 14) {
 				score = 50;
-				display.updateScorecard(category, i+1, score);
+				display.updateScorecard(category, i, score);
 				categoriesTotalNumber--;
 				lowerScore += score;
 			} else if (category == 15) {
 				score = dice[0] + dice[1] + dice[2] + dice[3] + dice[4];
-				display.updateScorecard(category, i+1, score);
+				display.updateScorecard(category, i, score);
 				categoriesTotalNumber--;
 				lowerScore += score;
 			}
