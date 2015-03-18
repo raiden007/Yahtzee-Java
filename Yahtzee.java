@@ -69,7 +69,7 @@ private void updateScoreCard(int i) {
 			score = 0;
 			display.updateScorecard(category, i+1, score);
 			categoriesTotalNumber--;
-			
+			lowerScore += score;
 		}
 		if (categoryIsValid == true) {
 			score = 0;
