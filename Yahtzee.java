@@ -56,10 +56,11 @@ private void checkBonus(int i) {
 		if (upperScore > 63) {
 			int upperBonus = upperScore + 35;
 			display.updateScorecard(8, i+1, upperBonus);
+			totalScore += upperBonus;
 		}
 		
 //		display.updateScorecard(16, i+1, score);
-//		display.updateScorecard(17, i+1, score);
+		display.updateScorecard(17, i+1, score);
 	}
 
 private void updateScoreCard(int i) {
@@ -79,57 +80,57 @@ private void updateScoreCard(int i) {
 				display.updateScorecard(category, i+1, score);
 				categoriesTotalNumber--;
 				upperScore += score;
+				totalScore += score;
 			} else if (category == 2) {
 				for (int j=0; j < N_DICE; j++) {
 					if (dice[j] == 2) {
 						score = score + 2;
-						
-
 					}
 				}
 				display.updateScorecard(category, i+1, score);
 				categoriesTotalNumber--;
 				upperScore += score;
+				totalScore += score;
 			} else if (category == 3) {
 				for (int j=0; j < N_DICE; j++) {
 					if (dice[j] == 3) {
 						score = score + 3;
-
 					}
 				}
 				display.updateScorecard(category, i+1, score);
 				categoriesTotalNumber--;
 				upperScore += score;
+				totalScore += score;
 			} else if (category == 4) {
 				for (int j=0; j < N_DICE; j++) {
 					if (dice[j] == 4) {
 						score = score + 4;
-
 					}
 				}
 				display.updateScorecard(category, i+1, score);
 				categoriesTotalNumber--;
 				upperScore += score;
+				totalScore += score;
 			} else if (category == 5) {
 				for (int j=0; j < N_DICE; j++) {
 					if (dice[j] == 5) {
 						score = score + 5;
-
 					}
 				}
 				display.updateScorecard(category, i+1, score);
 				categoriesTotalNumber--;
 				upperScore += score;
+				totalScore += score;
 			} else if (category == 6) {
 				for (int j=0; j < N_DICE; j++) {
 					if (dice[j] == 6) {
 						score = score + 6;
-
 					}
 				}
 				display.updateScorecard(category, i+1, score);
 				categoriesTotalNumber--;
 				upperScore += score;
+				totalScore += score;
 			}
 		}
 	}
@@ -165,4 +166,5 @@ private void rollDice() {
 	int categoriesTotalNumber;
 	boolean categoryIsValid;
 	int upperScore;
+	int totalScore;
 }
