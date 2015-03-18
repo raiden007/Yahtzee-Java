@@ -65,7 +65,7 @@ private void selectDice() {
 				println(dice[i]);
 				int diceRoll = rgen.nextInt(1, 6);
 				dice[i] = diceRoll;
-				println(dice[i]);
+//				println(dice[i]);
 			}
 		display.displayDice(dice);
 		}
