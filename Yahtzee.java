@@ -41,12 +41,10 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 					display.printMessage("Last chance!!!. Select the dice you wish to re-roll and press \"Roll Again\".");
 					selectDice();
 					display.printMessage("Select a category.");
-					println(dice[4]);
 					category = display.waitForPlayerToSelectCategory();
 					updateScoreCard(i);
 					checkBonus(i);
 				}
-			println ("Categories Left: " + categoriesTotalNumber);
 			}
 
 	}
@@ -67,9 +65,11 @@ private void checkBonus(int i) {
 
 private void updateScoreCard(int i) {
 		categoryIsValid = YahtzeeMagicStub.checkCategory(dice, category);
-		println(categoryIsValid);
 		while (categoryIsValid == false) {
-			display.updateScorecard(category, i+1, 0);
+			score = 0;
+			display.updateScorecard(category, i+1, score);
+			categoriesTotalNumber--;
+			
 		}
 		if (categoryIsValid == true) {
 			score = 0;
