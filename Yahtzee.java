@@ -27,8 +27,6 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 
 	private void playGame() {
 		score = 0;
-		totalScore = 0;
-		lowerScore = 0;
 		categoriesTotalNumber = 13 * nPlayers;
 			while (categoriesTotalNumber > 0) {
 				for (int i=0; i<nPlayers; i++) {
@@ -54,13 +52,13 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 private void checkBonus(int i) {
 		println("nPlayers: " + nPlayers);
 		display.updateScorecard(7, i+1, upperScore[i]);
-//		if (upperScore > 63) {
-//			upperBonus = 35;
-//			display.updateScorecard(8, i+1, upperBonus);
-//		}
-		display.updateScorecard(16, i+1, lowerScore);
+		if (upperScore[i] > 63) {
+			upperBonus = 35;
+			display.updateScorecard(8, i+1, upperBonus);
+		}
+		display.updateScorecard(16, i+1, lowerScore[i]);
 //		totalScore = upperScore + lowerScore + upperBonus;
-		display.updateScorecard(17, i+1, totalScore);
+		display.updateScorecard(17, i+1, totalScore[i]);
 	}
 
 private void updateScoreCard(int i) {
@@ -70,7 +68,7 @@ private void updateScoreCard(int i) {
 			display.updateScorecard(category, i+1, score);
 			categoriesTotalNumber--;
 			println(categoriesTotalNumber);
-			lowerScore += score;
+			lowerScore[i] += score;
 		}
 		if (categoryIsValid == true) {
 			score = 0;
@@ -91,7 +89,7 @@ private void updateScoreCard(int i) {
 				}
 				display.updateScorecard(category, i+1, score);
 				categoriesTotalNumber--;
-//				upperScore += score;
+				upperScore[i] += score;
 			} else if (category == 3) {
 				for (int j=0; j < N_DICE; j++) {
 					if (dice[j] == 3) {
@@ -100,7 +98,7 @@ private void updateScoreCard(int i) {
 				}
 				display.updateScorecard(category, i+1, score);
 				categoriesTotalNumber--;
-//				upperScore += score;
+				upperScore[i] += score;
 			} else if (category == 4) {
 				for (int j=0; j < N_DICE; j++) {
 					if (dice[j] == 4) {
@@ -109,7 +107,7 @@ private void updateScoreCard(int i) {
 				}
 				display.updateScorecard(category, i+1, score);
 				categoriesTotalNumber--;
-//				upperScore += score;
+				upperScore[i] += score;
 			} else if (category == 5) {
 				for (int j=0; j < N_DICE; j++) {
 					if (dice[j] == 5) {
@@ -118,7 +116,7 @@ private void updateScoreCard(int i) {
 				}
 				display.updateScorecard(category, i+1, score);
 				categoriesTotalNumber--;
-//				upperScore += score;
+				upperScore[i] += score;
 			} else if (category == 6) {
 				for (int j=0; j < N_DICE; j++) {
 					if (dice[j] == 6) {
@@ -127,42 +125,42 @@ private void updateScoreCard(int i) {
 				}
 				display.updateScorecard(category, i+1, score);
 				categoriesTotalNumber--;
-//				upperScore += score;
+				upperScore[i] += score;
 			} else if (category == 9) {
 				score = dice[0] + dice[1] + dice[2] + dice[3] + dice[4];
 				display.updateScorecard(category, i+1, score);
 				categoriesTotalNumber--;
-				lowerScore += score;
+				lowerScore[i] += score;
 			} else if (category == 10) {
 				score = dice[0] + dice[1] + dice[2] + dice[3] + dice[4];
 				display.updateScorecard(category, i+1, score);
 				categoriesTotalNumber--;
-				lowerScore += score;
+				lowerScore[i] += score;
 			} else if (category == 11) {
 				score = 25;
 				display.updateScorecard(category, i+1, score);
 				categoriesTotalNumber--;
-				lowerScore += score;
+				lowerScore[i] += score;
 			} else if (category == 12) {
 				score = 30;
 				display.updateScorecard(category, i+1, score);
 				categoriesTotalNumber--;
-				lowerScore += score;
+				lowerScore[i] += score;
 			} else if (category == 13) {
 				score = 40;
 				display.updateScorecard(category, i+1, score);
 				categoriesTotalNumber--;
-				lowerScore += score;
+				lowerScore[i] += score;
 			} else if (category == 14) {
 				score = 50;
 				display.updateScorecard(category, i+1, score);
 				categoriesTotalNumber--;
-				lowerScore += score;
+				lowerScore[i] += score;
 			} else if (category == 15) {
 				score = dice[0] + dice[1] + dice[2] + dice[3] + dice[4];
 				display.updateScorecard(category, i+1, score);
 				categoriesTotalNumber--;
-				lowerScore += score;
+				lowerScore[i] += score;
 			}
 		}
 	}
@@ -203,7 +201,7 @@ private void rollDice() {
 	int categoriesTotalNumber;
 	boolean categoryIsValid;
 	int[] upperScore = new int [100];
-	int totalScore;
-	int lowerScore;
+	int[] totalScore = new int [100];
+	int[] lowerScore = new int [100];
 	int upperBonus;
 }
