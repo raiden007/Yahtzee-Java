@@ -28,6 +28,8 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 	private void playGame() {
 		score = 0;
 		upperScore = 0;
+		totalScore = 0;
+		lowerScore = 0;
 		categoriesTotalNumber = 13 * nPlayers;
 			while (categoriesTotalNumber > 0) {
 				for (int i=0; i<nPlayers; i++) {
@@ -58,8 +60,7 @@ private void checkBonus(int i) {
 			display.updateScorecard(8, i+1, upperBonus);
 			totalScore += upperBonus;
 		}
-		
-//		display.updateScorecard(16, i+1, score);
+		display.updateScorecard(16, i+1, lowerScore);
 		display.updateScorecard(17, i+1, score);
 	}
 
@@ -167,4 +168,5 @@ private void rollDice() {
 	boolean categoryIsValid;
 	int upperScore;
 	int totalScore;
+	int lowerScore;
 }
