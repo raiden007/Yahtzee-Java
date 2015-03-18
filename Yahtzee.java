@@ -54,12 +54,11 @@ private void checkBonus(int i) {
 		
 		display.updateScorecard(7, i+1, upperScore);
 		if (upperScore > 63) {
-			int upperBonus = upperScore + 35;
+			upperBonus = 35;
 			display.updateScorecard(8, i+1, upperBonus);
-			totalScore += upperBonus;
 		}
 		display.updateScorecard(16, i+1, lowerScore);
-		totalScore = upperScore + lowerScore;
+		totalScore = upperScore + lowerScore + upperBonus;
 		display.updateScorecard(17, i+1, totalScore);
 	}
 
@@ -205,4 +204,5 @@ private void rollDice() {
 	int upperScore;
 	int totalScore;
 	int lowerScore;
+	int upperBonus;
 }
