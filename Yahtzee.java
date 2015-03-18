@@ -26,13 +26,12 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 	}
 
 	private void playGame() {
-
+		score = 0;
+		upperScore = 0;
+		totalScore = 0;
+		lowerScore = 0;
 		categoriesTotalNumber = 13 * nPlayers;
 			while (categoriesTotalNumber > 0) {
-				score = 0;
-				upperScore = 0;
-				totalScore = 0;
-				lowerScore = 0;
 				for (int i=0; i<nPlayers; i++) {
 					display.printMessage(playerNames[i] + "'s turn! Click \"Roll Dice\" button to roll the dice.");
 					display.waitForPlayerToClickRoll(1);
@@ -46,6 +45,7 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 					updateScoreCard(i);
 					checkBonus(i);
 				}
+				score = 0;
 			}
 		
 		display.printMessage("GAME OVER");	
