@@ -70,62 +70,62 @@ private void updateScoreCard(int i) {
 				for (int j=0; j < N_DICE; j++) {
 					if (dice[j] == 1) {
 						score = score + 1;
-						upperScore += score;
-						println("Upper score: " + upperScore);
 					}
 				}
 				display.updateScorecard(category, i+1, score);
 				categoriesTotalNumber--;
+				upperScore += score;
 			} else if (category == 2) {
 				for (int j=0; j < N_DICE; j++) {
 					if (dice[j] == 2) {
 						score = score + 2;
-						upperScore += score;
-						println("Upper score: " + upperScore);
+						
+
 					}
 				}
 				display.updateScorecard(category, i+1, score);
 				categoriesTotalNumber--;
+				upperScore += score;
 			} else if (category == 3) {
 				for (int j=0; j < N_DICE; j++) {
 					if (dice[j] == 3) {
 						score = score + 3;
-						upperScore += score;
-						println("Upper score: " + upperScore);
+
 					}
 				}
 				display.updateScorecard(category, i+1, score);
 				categoriesTotalNumber--;
+				upperScore += score;
 			} else if (category == 4) {
 				for (int j=0; j < N_DICE; j++) {
 					if (dice[j] == 4) {
 						score = score + 4;
-						upperScore += score;
-						println("Upper score: " + upperScore);
+
 					}
 				}
 				display.updateScorecard(category, i+1, score);
 				categoriesTotalNumber--;
+				upperScore += score;
 			} else if (category == 5) {
 				for (int j=0; j < N_DICE; j++) {
 					if (dice[j] == 5) {
 						score = score + 5;
-						upperScore += score;
-						println("Upper score: " + upperScore);
+
 					}
 				}
 				display.updateScorecard(category, i+1, score);
 				categoriesTotalNumber--;
+				upperScore += score;
 			} else if (category == 6) {
 				for (int j=0; j < N_DICE; j++) {
 					if (dice[j] == 6) {
 						score = score + 6;
-						upperScore += score;
-						println("Upper score: " + upperScore);
+
 					}
 				}
 				display.updateScorecard(category, i+1, score);
 				categoriesTotalNumber--;
+				upperScore += score;
 			}
 		}
 	}
