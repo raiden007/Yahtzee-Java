@@ -36,12 +36,25 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 			selectDice();
 			display.printMessage("Select a category.");
 			category = display.waitForPlayerToSelectCategory();
+			boolean categoryIsValid = YahtzeeMagicStub.checkCategory(dice, category);
+			while (categoryIsValid == false) {
+				display.printMessage("Wrong Category, select another.");
+				display.waitForPlayerToSelectCategory();
+			}
 //		int player = 1;
 //		int score = 0;
 //		display.updateScorecard(category, player, score);
 		}
 	}
 		
+private boolean checkCategoryValidity(int category) {
+		// TODO Auto-generated method stub
+		if (category == 9) {
+			
+		}
+		return false;
+	}
+
 private void selectDice() {
 		display.waitForPlayerToSelectDice();
 		for (int i=0; i < N_DICE; i++) {
