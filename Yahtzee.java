@@ -27,32 +27,33 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 
 	private void playGame() {
 		score = 0;
-		for (int i=0; i<nPlayers; i++) {
-			display.printMessage(playerNames[i] + "'s turn! Click \"Roll Dice\" button to roll the dice.");
-			display.waitForPlayerToClickRoll(1);
-			rollDice();
-			display.printMessage("Select the dice you wish to re-roll and press \"Roll Again\".");
-			selectDice();
-			display.printMessage("Last re-roll!. Select the dice you wish to re-roll and press \"Roll Again\".");
-			selectDice();
-			display.printMessage("Select a category.");
-			category = display.waitForPlayerToSelectCategory();
-			boolean categoryIsValid = YahtzeeMagicStub.checkCategory(dice, category);
-			while (categoryIsValid == false) {
-				display.updateScorecard(category, i+1, score);
-			}
-			if (categoryIsValid == true) {
-				if (category == 1) {
-					for (int j=0; i < N_DICE; j++) {
-						if (dice[i] == 1) {
-							score = score + 1;
-						}
-					}
+		categoriesTotalNumber = nPlayers * 13;
+		while (categoriesTotalNumber > 0) {
+			for (int i=0; i<nPlayers; i++) {
+				display.printMessage(playerNames[i] + "'s turn! Click \"Roll Dice\" button to roll the dice.");
+				display.waitForPlayerToClickRoll(1);
+				rollDice();
+				display.printMessage("Select the dice you wish to re-roll and press \"Roll Again\".");
+				selectDice();
+				display.printMessage("Last re-roll!. Select the dice you wish to re-roll and press \"Roll Again\".");
+				selectDice();
+				display.printMessage("Select a category.");
+				category = display.waitForPlayerToSelectCategory();
+				boolean categoryIsValid = YahtzeeMagicStub.checkCategory(dice, category);
+				while (categoryIsValid == false) {
 					display.updateScorecard(category, i+1, score);
 				}
-				
+				if (categoryIsValid == true) {
+					if (category == 1) {
+						for (int j=0; i < N_DICE; j++) {
+							if (dice[i] == 1) {
+								score = score + 1;
+							}
+						}
+						display.updateScorecard(category, i+1, score);
+					}			
+				}		
 			}
-			
 		}
 	}
 		
