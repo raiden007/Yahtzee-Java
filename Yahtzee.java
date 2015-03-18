@@ -73,6 +73,7 @@ private void updateScoreCard(int i) {
 					}
 				}
 				display.updateScorecard(category, i+1, score);
+				categoriesTotalNumber--;
 			} else if (category == 2) {
 				for (int j=0; j < N_DICE; j++) {
 					if (dice[j] == 2) {
@@ -81,6 +82,7 @@ private void updateScoreCard(int i) {
 					}
 				}
 				display.updateScorecard(category, i+1, score);
+				categoriesTotalNumber--;
 			} else if (category == 3) {
 				for (int j=0; j < N_DICE; j++) {
 					if (dice[j] == 3) {
@@ -89,6 +91,7 @@ private void updateScoreCard(int i) {
 					}
 				}
 				display.updateScorecard(category, i+1, score);
+				categoriesTotalNumber--;
 			} else if (category == 4) {
 				for (int j=0; j < N_DICE; j++) {
 					if (dice[j] == 4) {
@@ -97,6 +100,7 @@ private void updateScoreCard(int i) {
 					}
 				}
 				display.updateScorecard(category, i+1, score);
+				categoriesTotalNumber--;
 			} else if (category == 5) {
 				for (int j=0; j < N_DICE; j++) {
 					if (dice[j] == 5) {
@@ -105,6 +109,7 @@ private void updateScoreCard(int i) {
 					}
 				}
 				display.updateScorecard(category, i+1, score);
+				categoriesTotalNumber--;
 			} else if (category == 6) {
 				for (int j=0; j < N_DICE; j++) {
 					if (dice[j] == 6) {
@@ -113,6 +118,7 @@ private void updateScoreCard(int i) {
 					}
 				}
 				display.updateScorecard(category, i+1, score);
+				categoriesTotalNumber--;
 			}
 		}
 	}
