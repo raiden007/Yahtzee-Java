@@ -74,9 +74,9 @@ private void rollDice() {
 		for (int i=0; i<N_DICE; i++) {
 			int diceRoll = rgen.nextInt(1, 6);
 			dice[i] = diceRoll;
+			println(dice[i]);
 		}
 		display.displayDice(dice);
-		println(dice);
 	}
 
 /* Private instance variables */
