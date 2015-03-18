@@ -43,6 +43,7 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 					display.updateScorecard(category, i+1, 0);
 				}
 				if (categoryIsValid == true) {
+					println(category);
 					if (category == 1) {
 						for (int j=0; i < N_DICE; j++) {
 							if (dice[i] == 1) {
