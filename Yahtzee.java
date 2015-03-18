@@ -67,8 +67,8 @@ private void selectDice() {
 				dice[i] = diceRoll;
 //				println(dice[i]);
 			}
-		display.displayDice(dice);
 		}
+		display.displayDice(dice);
 	}
 
 private void rollDice() {
