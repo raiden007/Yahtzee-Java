@@ -26,6 +26,7 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 	}
 
 	private void playGame() {
+		score = 0;
 		for (int i=0; i<nPlayers; i++) {
 			display.printMessage(playerNames[i] + "'s turn! Click \"Roll Dice\" button to roll the dice.");
 			display.waitForPlayerToClickRoll(1);
@@ -38,24 +39,18 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 			category = display.waitForPlayerToSelectCategory();
 			boolean categoryIsValid = YahtzeeMagicStub.checkCategory(dice, category);
 			while (categoryIsValid == false) {
-				display.printMessage("Wrong Category, select another.");
-				display.waitForPlayerToSelectCategory();
+				display.updateScorecard(category, i+1, score);
 			}
 			if (categoryIsValid == true) {
-				score = 1;
+				if (category == 1) {
+					
+				}
 				display.updateScorecard(category, i+1, 1);
 			}
 			
 		}
 	}
 		
-private boolean checkCategoryValidity(int category) {
-		// TODO Auto-generated method stub
-		if (category == 9) {
-			
-		}
-		return false;
-	}
 
 private void selectDice() {
 		display.waitForPlayerToSelectDice();
@@ -85,4 +80,5 @@ private void rollDice() {
 	private RandomGenerator rgen = new RandomGenerator();
 	int category;
 	int score;
+	int categoriesTotalNumber;
 }
