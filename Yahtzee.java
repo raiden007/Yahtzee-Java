@@ -202,7 +202,7 @@ private void rollDice() {
 	int score;
 	int categoriesTotalNumber;
 	boolean categoryIsValid;
-	int[] upperScore = new int [nPlayers];
+	int[] upperScore = new int [100];
 	int totalScore;
 	int lowerScore;
 	int upperBonus;
