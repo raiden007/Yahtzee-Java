@@ -46,7 +46,7 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 					checkBonus(i);
 				}
 			}
-
+		display.printMessage("GAME OVER");	
 	}
 		
 
