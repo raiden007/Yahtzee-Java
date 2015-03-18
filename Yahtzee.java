@@ -53,7 +53,11 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 private void checkBonus(int i) {
 		
 		display.updateScorecard(7, i+1, upperScore);
-		display.updateScorecard(8, i+1, score);
+		if (upperScore > 63) {
+			
+			display.updateScorecard(8, i+1, score);
+		}
+		
 		display.updateScorecard(16, i+1, score);
 		display.updateScorecard(17, i+1, score);
 	}
