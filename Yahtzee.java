@@ -27,24 +27,30 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 
 	private void playGame() {
 		score = 0;
-			for (int i=0; i<nPlayers; i++) {
-				display.printMessage(playerNames[i] + "'s turn! Click \"Roll Dice\" button to roll the dice.");
-				display.waitForPlayerToClickRoll(1);
-				rollDice();
-				display.printMessage("Select the dice you wish to re-roll and press \"Roll Again\".");
-				selectDice();
-				display.printMessage("Last chance!!!. Select the dice you wish to re-roll and press \"Roll Again\".");
-				selectDice();
-				display.printMessage("Select a category.");
-				println(dice[4]);
-				category = display.waitForPlayerToSelectCategory();
-				updateScoreCard(i);
-				checkBonus(i);
+		categoriesTotalNumber = 13 * nPlayers;
+			while (categoriesTotalNumber > 0) {
+				for (int i=0; i<nPlayers; i++) {
+					display.printMessage(playerNames[i] + "'s turn! Click \"Roll Dice\" button to roll the dice.");
+					display.waitForPlayerToClickRoll(1);
+					rollDice();
+					display.printMessage("Select the dice you wish to re-roll and press \"Roll Again\".");
+					selectDice();
+					display.printMessage("Last chance!!!. Select the dice you wish to re-roll and press \"Roll Again\".");
+					selectDice();
+					display.printMessage("Select a category.");
+					println(dice[4]);
+					category = display.waitForPlayerToSelectCategory();
+					updateScoreCard(i);
+					checkBonus(i);
+				}
+			println ("Categories Left: " + categoriesTotalNumber);
 			}
+
 	}
 		
 
 private void checkBonus(int i) {
+		
 		display.updateScorecard(7, i+1, score);
 		display.updateScorecard(8, i+1, score);
 		display.updateScorecard(16, i+1, score);
@@ -141,4 +147,5 @@ private void rollDice() {
 	int score;
 	int categoriesTotalNumber;
 	boolean categoryIsValid;
+	int upperScore;
 }
