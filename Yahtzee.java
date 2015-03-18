@@ -64,9 +64,9 @@ private void selectDice() {
 			int diceRoll = rgen.nextInt(1, 6);
 			if(display.isDieSelected(i) == true) {
 				dice[i] = diceRoll;
+				println(dice[i]);
 			}
 		display.displayDice(dice);
-		println(dice);
 		}
 	}
 
