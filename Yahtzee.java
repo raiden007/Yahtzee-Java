@@ -26,17 +26,10 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 	}
 
 	private void playGame() {
-		score = 0;
-		categoriesTotalNumber = 13 * nPlayers;
-			while (categoriesTotalNumber > 0) {
-				for (int i=0; i<nPlayers; i++) {
-					display.printMessage(playerNames[i] + "'s turn! Click \"Roll Dice\" button to roll the dice.");
-					display.waitForPlayerToClickRoll(i+1);
-					rollDice();
-					display.printMessage("Select the dice you wish to re-roll and press \"Roll Again\".");
-					selectDice();
-					display.printMessage("Last chance!!!. Select the dice you wish to re-roll and press \"Roll Again\".");
-					selectDice();
+		initialInit();
+		while (categoriesTotalNumber > 0) {
+			for (int i=0; i<nPlayers; i++) {
+				userRollsDice(i);
 					display.printMessage("Select a category.");
 					category = display.waitForPlayerToSelectCategory();
 					updateScoreCard(i);
@@ -48,6 +41,21 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 		display.printMessage("GAME OVER");	
 	}
 		
+
+private void userRollsDice(int i) {
+		display.printMessage(playerNames[i] + "'s turn! Click \"Roll Dice\" button to roll the dice.");
+		display.waitForPlayerToClickRoll(i+1);
+		rollDice();
+		display.printMessage("Select the dice you wish to re-roll and press \"Roll Again\".");
+		selectDice();
+		display.printMessage("Last chance!!!. Select the dice you wish to re-roll and press \"Roll Again\".");
+		selectDice();	
+	}
+
+private void initialInit() {
+		score = 0;
+		categoriesTotalNumber = 13 * nPlayers;
+	}
 
 private void checkBonus(int i) {
 		println("nPlayers: " + nPlayers);
