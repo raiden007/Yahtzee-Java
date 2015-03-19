@@ -135,7 +135,12 @@ private boolean checkCategory(int[] dice, int category) {
 	} else if (category == 13) {
 		// TODO large straight
 	} else if (category == 14) {
-		checkYahtzee(dice);
+		boolean valid = checkYahtzee(dice);
+		if (valid == true) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 	return false;
 }
