@@ -85,7 +85,7 @@ private void updateScoreCard(int i) {
 			if (category == 1 || category == 2 || category == 3 || category == 4 || category == 5 || category == 6) {
 				for (int j=0; j < N_DICE; j++) {
 					if (dice[j] == 1) {
-						score = score + j;
+						score = score + category;
 					}
 				}
 				display.updateScorecard(category, i+1, score);
