@@ -30,17 +30,20 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 		while (categoriesTotalNumber > 0) {
 			for (int i=0; i<nPlayers; i++) {
 				userRollsDice(i);
-					display.printMessage("Select a category.");
-					category = display.waitForPlayerToSelectCategory();
-					updateScoreCard(i);
-					checkBonus(i);
-//					println("UpperScore: " + upperScore[i+1]);
+				userSelectsCategory();
+				updateScoreCard(i);
+				checkBonus(i);
 				}
 			}
 		
 		display.printMessage("GAME OVER");	
 	}
 		
+
+private void userSelectsCategory() {
+		display.printMessage("Select a category.");
+		category = display.waitForPlayerToSelectCategory();	
+	}
 
 private void userRollsDice(int i) {
 		display.printMessage(playerNames[i] + "'s turn! Click \"Roll Dice\" button to roll the dice.");
@@ -58,7 +61,6 @@ private void initialInit() {
 	}
 
 private void checkBonus(int i) {
-		println("nPlayers: " + nPlayers);
 		display.updateScorecard(7, i+1, upperScore[i]);
 		if (upperScore[i] > 63) {
 			upperBonus[i] = 35;
@@ -80,55 +82,10 @@ private void updateScoreCard(int i) {
 		}
 		if (categoryIsValid == true) {
 			score = 0;
-			if (category == 1) {
+			if (category == 1 || category == 2 || category == 3 || category == 4 || category == 5 || category == 6) {
 				for (int j=0; j < N_DICE; j++) {
 					if (dice[j] == 1) {
-						score = score + 1;
-					}
-				}
-				display.updateScorecard(category, i+1, score);
-				categoriesTotalNumber--;
-				upperScore[i] += score;
-			} else if (category == 2) {
-				for (int j=0; j < N_DICE; j++) {
-					if (dice[j] == 2) {
-						score = score + 2;
-					}
-				}
-				display.updateScorecard(category, i+1, score);
-				categoriesTotalNumber--;
-				upperScore[i] += score;
-			} else if (category == 3) {
-				for (int j=0; j < N_DICE; j++) {
-					if (dice[j] == 3) {
-						score = score + 3;
-					}
-				}
-				display.updateScorecard(category, i+1, score);
-				categoriesTotalNumber--;
-				upperScore[i] += score;
-			} else if (category == 4) {
-				for (int j=0; j < N_DICE; j++) {
-					if (dice[j] == 4) {
-						score = score + 4;
-					}
-				}
-				display.updateScorecard(category, i+1, score);
-				categoriesTotalNumber--;
-				upperScore[i] += score;
-			} else if (category == 5) {
-				for (int j=0; j < N_DICE; j++) {
-					if (dice[j] == 5) {
-						score = score + 5;
-					}
-				}
-				display.updateScorecard(category, i+1, score);
-				categoriesTotalNumber--;
-				upperScore[i] += score;
-			} else if (category == 6) {
-				for (int j=0; j < N_DICE; j++) {
-					if (dice[j] == 6) {
-						score = score + 6;
+						score = score + j;
 					}
 				}
 				display.updateScorecard(category, i+1, score);
