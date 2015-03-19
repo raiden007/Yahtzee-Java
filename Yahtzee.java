@@ -72,7 +72,8 @@ private void checkBonus(int i) {
 	}
 
 private void updateScoreCard(int i) {
-		categoryIsValid = YahtzeeMagicStub.checkCategory(dice, category);
+//		categoryIsValid = YahtzeeMagicStub.checkCategory(dice, category);
+		categoryIsValid = checkCategory(dice, category);
 		if (categoryIsValid == false) {
 			score = 0;
 			display.updateScorecard(category, i+1, score);
@@ -120,8 +121,11 @@ private void updateScoreCard(int i) {
 		}
 	}
 
-private boolean checkThreeOfAKind() {
+private boolean checkCategory(int[] dice, int category) {
 	// TODO Auto-generated method stub
+	if (category == 1 || category == 2 || category == 3 || category == 4 || category == 5 || category == 6) {
+		return true;
+	}
 	return false;
 }
 
