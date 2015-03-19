@@ -122,11 +122,30 @@ private void updateScoreCard(int i) {
 	}
 
 private boolean checkCategory(int[] dice, int category) {
-	// TODO Auto-generated method stub
-	if (category == 1 || category == 2 || category == 3 || category == 4 || category == 5 || category == 6) {
+	if (category == 1 || category == 2 || category == 3 || category == 4 || category == 5 || category == 6 || category == 15) {
 		return true;
+	} else if (category == 9) {
+		// TODO Three of a kind
+	} else if (category == 10) {
+		// TODO 4 of a kind
+	} else if (category == 11) {
+		// TODO full house
+	} else if (category == 12) {
+		// TODO small straight
+	} else if (category == 13) {
+		// TODO large straight
+	} else if (category == 14) {
+		checkYahtzee(dice);
 	}
 	return false;
+}
+
+private boolean checkYahtzee(int[] dice2) {
+	if (dice[0] == dice[1] && dice[0]== dice [2] && dice[0 ]== dice [3] && dice[0 ]== dice[4]) {
+		return true;
+	} else {
+		return false;
+	}
 }
 
 private void selectDice() {
