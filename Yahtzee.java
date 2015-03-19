@@ -84,7 +84,7 @@ private void updateScoreCard(int i) {
 			score = 0;
 			if (category == 1 || category == 2 || category == 3 || category == 4 || category == 5 || category == 6) {
 				for (int j=0; j < N_DICE; j++) {
-					if (dice[j] == 1) {
+					if (dice[j] == category) {
 						score = score + category;
 					}
 				}
