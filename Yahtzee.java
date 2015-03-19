@@ -91,12 +91,7 @@ private void updateScoreCard(int i) {
 				display.updateScorecard(category, i+1, score);
 				categoriesTotalNumber--;
 				upperScore[i] += score;
-			} else if (category == 9) {
-				score = dice[0] + dice[1] + dice[2] + dice[3] + dice[4];
-				display.updateScorecard(category, i+1, score);
-				categoriesTotalNumber--;
-				lowerScore[i] += score;
-			} else if (category == 10) {
+			} else if (category == 9 || category == 10 || category == 15) {
 				score = dice[0] + dice[1] + dice[2] + dice[3] + dice[4];
 				display.updateScorecard(category, i+1, score);
 				categoriesTotalNumber--;
@@ -121,12 +116,7 @@ private void updateScoreCard(int i) {
 				display.updateScorecard(category, i+1, score);
 				categoriesTotalNumber--;
 				lowerScore[i] += score;
-			} else if (category == 15) {
-				score = dice[0] + dice[1] + dice[2] + dice[3] + dice[4];
-				display.updateScorecard(category, i+1, score);
-				categoriesTotalNumber--;
-				lowerScore[i] += score;
-			}
+			} 
 		}
 	}
 
