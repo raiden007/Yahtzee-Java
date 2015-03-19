@@ -31,7 +31,7 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 			while (categoriesTotalNumber > 0) {
 				for (int i=0; i<nPlayers; i++) {
 					display.printMessage(playerNames[i] + "'s turn! Click \"Roll Dice\" button to roll the dice.");
-					display.waitForPlayerToClickRoll(i);
+					display.waitForPlayerToClickRoll(i+1);
 					rollDice();
 					display.printMessage("Select the dice you wish to re-roll and press \"Roll Again\".");
 					selectDice();
