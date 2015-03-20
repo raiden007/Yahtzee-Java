@@ -30,18 +30,10 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 		categoriesTotalNumber = 13 * nPlayers;
 			while (categoriesTotalNumber > 0) {
 				for (int i=0; i<nPlayers; i++) {
-					display.printMessage(playerNames[i] + "'s turn! Click \"Roll Dice\" button to roll the dice.");
-					display.waitForPlayerToClickRoll(1);
-					rollDice();
-					display.printMessage("Select the dice you wish to re-roll and press \"Roll Again\".");
-					selectDice();
-					display.printMessage("Last chance!!!. Select the dice you wish to re-roll and press \"Roll Again\".");
-					selectDice();
-					display.printMessage("Select a category.");
-					category = display.waitForPlayerToSelectCategory();
+					playerRollsDice(i);
+					playerSelectsCategory();
 					updateScoreCard(i);
 					checkBonus(i);
-					println("UpperScore: " + upperScore[i+1]);
 				}
 			}
 		
@@ -49,15 +41,31 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 	}
 		
 
+private void playerSelectsCategory() {
+	display.printMessage("Select a category.");
+	category = display.waitForPlayerToSelectCategory();
+		
+}
+
+private void playerRollsDice(int i) {
+	display.printMessage(playerNames[i] + "'s turn! Click \"Roll Dice\" button to roll the dice.");
+	display.waitForPlayerToClickRoll(i);
+	rollDice();
+	display.printMessage("Select the dice you wish to re-roll and press \"Roll Again\".");
+	selectDice();
+	display.printMessage("Last chance!!!. Select the dice you wish to re-roll and press \"Roll Again\".");
+	selectDice();
+}
+
 private void checkBonus(int i) {
 		println("nPlayers: " + nPlayers);
 		display.updateScorecard(7, i+1, upperScore[i]);
 		if (upperScore[i] > 63) {
-			upperBonus = 35;
-			display.updateScorecard(8, i+1, upperBonus);
+			upperBonus[i] = 35;
+			display.updateScorecard(8, i+1, upperBonus[i]);
 		}
 		display.updateScorecard(16, i+1, lowerScore[i]);
-		totalScore[i] = upperScore[i] + lowerScore[i] + upperBonus;
+		totalScore[i] = upperScore[i] + lowerScore[i] + upperBonus[i];
 		display.updateScorecard(17, i+1, totalScore[i]);
 	}
 
@@ -237,8 +245,8 @@ private void rollDice() {
 	int score;
 	int categoriesTotalNumber;
 	boolean categoryIsValid;
-	int[] upperScore = new int [100];
-	int[] totalScore = new int [100];
-	int[] lowerScore = new int [100];
-	int upperBonus;
+	int[] upperScore = new int [5];
+	int[] totalScore = new int [5];
+	int[] lowerScore = new int [5];
+	int[] upperBonus = new int [5];
 }
