@@ -49,7 +49,7 @@ private void playerSelectsCategory() {
 
 private void playerRollsDice(int i) {
 	display.printMessage(playerNames[i] + "'s turn! Click \"Roll Dice\" button to roll the dice.");
-	display.waitForPlayerToClickRoll(i);
+	display.waitForPlayerToClickRoll(i+1);
 	rollDice();
 	display.printMessage("Select the dice you wish to re-roll and press \"Roll Again\".");
 	selectDice();
